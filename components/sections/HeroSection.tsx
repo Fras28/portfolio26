@@ -70,7 +70,7 @@ export default function HeroSection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-cyber-purple/5 blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-8 sm:pb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
         {/* Text side */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -99,14 +99,14 @@ export default function HeroSection() {
             <p className="font-mono text-cyber-cyan/50 text-sm tracking-widest mb-2 uppercase">
               {'>'} Inicializando sistema...
             </p>
-            <h1 className="section-title text-5xl sm:text-6xl xl:text-7xl font-black leading-none">
+            <h1 className="section-title text-4xl sm:text-5xl xl:text-7xl font-black leading-none">
               <span className="block text-cyber-white animate-glitch">FRANCO</span>
               <span className="block text-gradient-cyber">SELVAROLO</span>
             </h1>
           </div>
 
           {/* Typewriter */}
-          <div className="font-mono text-xl sm:text-2xl h-8">
+          <div className="font-mono text-lg sm:text-2xl h-10 sm:h-8">
             <Typewriter />
           </div>
 
@@ -129,11 +129,11 @@ export default function HeroSection() {
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap gap-4 pt-2">
-            <a href="#projects" className="btn-cyber">
+          <div className="flex flex-wrap gap-3 pt-2">
+            <a href="#projects" className="btn-cyber text-xs sm:text-sm">
               Ver proyectos
             </a>
-            <a href="#contact" className="btn-cyber btn-cyber-pink">
+            <a href="#contact" className="btn-cyber btn-cyber-pink text-xs sm:text-sm">
               Contactar
             </a>
           </div>
@@ -144,7 +144,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="relative w-full h-[500px] lg:h-[600px]"
+          className="relative w-full h-[280px] sm:h-[380px] lg:h-[600px]"
         >
           <CornerDecor pos="tl" />
           <CornerDecor pos="tr" />

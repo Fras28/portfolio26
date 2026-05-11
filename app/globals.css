@@ -28,7 +28,16 @@ body {
   color: #e8f4f8;
   font-family: var(--font-mono);
   overflow-x: hidden;
-  cursor: none;
+}
+
+/* Custom cursor solo en desktop con mouse */
+@media (pointer: fine) {
+  body { cursor: none; }
+}
+
+/* En mobile ocultar cursor personalizado */
+@media (pointer: coarse) {
+  .cursor, .cursor-ring { display: none !important; }
 }
 
 /* ── Custom Cursor ── */

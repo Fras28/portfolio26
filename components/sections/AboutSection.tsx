@@ -37,7 +37,7 @@ export default function AboutSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-dark/50 to-transparent pointer-events-none" />
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-3/4 bg-gradient-to-b from-transparent via-cyber-cyan/20 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,7 +55,7 @@ export default function AboutSection() {
           <div className="mt-4 w-24 h-px bg-gradient-to-r from-cyber-cyan to-transparent" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Photo + bio */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}

@@ -59,13 +59,13 @@ export default function ExperienceSection() {
     <section id="experience" ref={ref} className="relative py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-dark/40 to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-12"
         >
           <p className="font-mono text-cyber-pink text-xs tracking-widest uppercase mb-2">
             {'>'} Registro de misiones completadas
@@ -76,37 +76,35 @@ export default function ExperienceSection() {
           <div className="mt-4 w-24 h-px bg-gradient-to-r from-cyber-cyan to-transparent" />
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative">
+        {/* Timeline — single column, works on all screens */}
+        <div className="relative pl-6 sm:pl-8">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyber-cyan/50 via-cyber-pink/30 to-transparent" />
+          <div className="absolute left-2 sm:left-3 top-0 bottom-0 w-px bg-gradient-to-b from-cyber-cyan/60 via-cyber-pink/30 to-transparent" />
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {experiences.map((exp, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+                initial={{ opacity: 0, x: -30 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, delay: i * 0.15 }}
-                className={`relative flex ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start gap-8`}
+                transition={{ duration: 0.7, delay: i * 0.12 }}
+                className="relative"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 flex flex-col items-center">
-                  <div
-                    className="w-3 h-3 rounded-full border-2 z-10"
-                    style={{ borderColor: exp.color, backgroundColor: '#04060f', boxShadow: `0 0 10px ${exp.color}` }}
-                  />
+                <div
+                  className="absolute -left-6 sm:-left-8 top-4 w-4 h-4 rounded-full border-2 z-10 flex items-center justify-center"
+                  style={{ borderColor: exp.color, backgroundColor: '#04060f', boxShadow: `0 0 8px ${exp.color}` }}
+                >
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: exp.color }} />
                 </div>
 
-                {/* Spacer for centering */}
-                <div className="hidden md:block w-1/2" />
-
                 {/* Card */}
-                <div className="ml-12 md:ml-0 md:w-1/2 neon-card p-6 space-y-3"
-                  style={{ borderColor: `${exp.color}30` }}
+                <div
+                  className="neon-card p-4 sm:p-6 space-y-3"
+                  style={{ borderColor: `${exp.color}30`, borderLeftColor: exp.color, borderLeftWidth: '2px' }}
                 >
-                  {/* Type badge */}
-                  <div className="flex items-center justify-between">
+                  {/* Header row */}
+                  <div className="flex flex-wrap items-start justify-between gap-2">
                     <span
                       className="font-mono text-xs uppercase tracking-widest px-2 py-0.5 border"
                       style={{ color: exp.color, borderColor: `${exp.color}40` }}
@@ -117,11 +115,11 @@ export default function ExperienceSection() {
                   </div>
 
                   <div>
-                    <h3 className="font-display text-base font-bold text-cyber-white">{exp.title}</h3>
+                    <h3 className="font-display text-sm sm:text-base font-bold text-cyber-white leading-snug">{exp.title}</h3>
                     <p className="font-mono text-sm mt-0.5" style={{ color: exp.color }}>{exp.company}</p>
                   </div>
 
-                  <p className="font-mono text-sm text-cyber-white/60 leading-relaxed">
+                  <p className="font-mono text-xs sm:text-sm text-cyber-white/60 leading-relaxed">
                     {exp.description}
                   </p>
 

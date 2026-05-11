@@ -148,17 +148,17 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
       <div className="p-6 space-y-4">
         {/* Header */}
-        <div className="flex items-start justify-between">
-          <div>
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex-1 min-w-0">
             <p className="font-mono text-xs uppercase tracking-widest mb-1" style={{ color: project.color }}>
               {String(project.id).padStart(2, '0')} / {project.year}
             </p>
-            <h3 className="font-display text-lg font-bold text-cyber-white group-hover:text-white transition-colors">
+            <h3 className="font-display text-base sm:text-lg font-bold text-cyber-white group-hover:text-white transition-colors">
               {project.title}
             </h3>
           </div>
           <span
-            className="text-xs font-mono px-2 py-1 border"
+            className="flex-shrink-0 text-xs font-mono px-2 py-1 border"
             style={{
               borderColor: `${project.color}60`,
               color: project.color,
@@ -219,7 +219,7 @@ export default function ProjectsSection() {
     <section id="projects" ref={ref} className="relative py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-navy/30 to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

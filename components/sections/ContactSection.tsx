@@ -89,7 +89,7 @@ export default function ContactSection() {
     <section id="contact" ref={ref} className="relative py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-dark/60 to-cyber-black pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -116,7 +116,7 @@ export default function ContactSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit(onSubmit)} className="neon-card p-8 space-y-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="neon-card p-5 sm:p-8 space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="font-mono text-xs text-cyber-cyan/70 uppercase tracking-widest block mb-2">
@@ -243,11 +243,11 @@ export default function ContactSection() {
                 >
                   {s.icon}
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="font-display text-sm font-bold text-cyber-white group-hover:text-cyber-cyan transition-colors">
                     {s.name}
                   </p>
-                  <p className="font-mono text-xs text-cyber-white/40">{s.handle}</p>
+                  <p className="font-mono text-xs text-cyber-white/40 truncate">{s.handle}</p>
                 </div>
                 <div className="ml-auto">
                   <svg className="w-4 h-4 text-cyber-white/20 group-hover:text-cyber-cyan transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
