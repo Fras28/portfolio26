@@ -48,7 +48,7 @@ npm run db:studio
 
 Guardá tu foto en:
 ```
-public/images/franco.png
+public/images/Franco.png
 ```
 Recomendación: formato JPG, tamaño ~600×600px o mayor.
 

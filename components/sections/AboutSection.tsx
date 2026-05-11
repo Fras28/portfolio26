@@ -72,10 +72,10 @@ export default function AboutSection() {
               {/* Photo frame */}
               <div className="relative w-full h-full cyber-border overflow-hidden">
                 <div className="glitch-img absolute inset-0"
-                  style={{ backgroundImage: 'url(/images/franco.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  style={{ backgroundImage: 'url(/images/Franco.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
                 />
                 <Image
-                  src="/images/franco.png"
+                  src="/images/Franco.png"
                   alt="Franco Selvarolo"
                   fill
                   className="object-cover"
