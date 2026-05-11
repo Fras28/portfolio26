@@ -1,0 +1,146 @@
+'use client';
+
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+
+// ── Edit your experience here ──
+const experiences = [
+  {
+    type: 'work',
+    title: 'Desarrollador Web & Automatizaciones',
+    company: 'Equivalente — Agencia de Marketing Agropecuario',
+    period: '2025 — Presente',
+    description: 'Desarrollo web y automatizaciones para el equipo interno de la agencia. Creación del sitio institucional con experiencias 3D interactivas, integración con Firebase y estrategias de captación digital.',
+    tags: ['React', 'Three.js', 'Firebase', 'Framer Motion', 'n8n', 'ManyChat'],
+    color: '#00f5ff',
+  },
+  {
+    type: 'work',
+    title: 'Especialista en Automatizaciones',
+    company: 'Madison Marketing — Bahía Blanca',
+    period: '2025 — Presente',
+    description: 'Diseño e implementación de flujos de automatización para campañas de marketing digital. Bots conversacionales con ManyChat, integraciones y workflows con n8n para clientes de la agencia.',
+    tags: ['ManyChat', 'n8n', 'WhatsApp API', 'Meta Ads', 'Zapier'],
+    color: '#ff0080',
+  },
+  {
+    type: 'work',
+    title: 'Full Stack Developer',
+    company: 'Morton Desarrollos — Freelance',
+    period: '2023 — Presente',
+    description: 'Desarrollo de aplicaciones web y móviles para clientes de distintas industrias. Proyectos propios y para terceros: e-commerce, dashboards, landings y apps React Native.',
+    tags: ['Next.js', 'React Native', 'Node.js', 'Strapi', 'PostgreSQL'],
+    color: '#7c00ff',
+  },
+  {
+    type: 'work',
+    title: 'Desarrollador — Equipo Tecnológico',
+    company: 'Municipalidad de Bahía Blanca',
+    period: '2022 — 2023',
+    description: 'Participación en el equipo de desarrollo tecnológico municipal. Trabajo en sistemas internos, herramientas digitales para gestión pública y experiencia en entornos de desarrollo institucional.',
+    tags: ['Desarrollo Web', 'Sistemas Internos', 'Gestión Pública'],
+    color: '#00aaff',
+  },
+  {
+    type: 'education',
+    title: 'Desarrollo Web Full Stack',
+    company: 'Coderhouse',
+    period: '2022 — 2023',
+    description: 'Formación intensiva en desarrollo web moderno. React, Node.js, MongoDB, Express, Git y metodologías ágiles.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+    color: '#00ff88',
+  },
+];
+
+export default function ExperienceSection() {
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+
+  return (
+    <section id="experience" ref={ref} className="relative py-32">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-dark/40 to-transparent pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <p className="font-mono text-cyber-pink text-xs tracking-widest uppercase mb-2">
+            {'>'} Registro de misiones completadas
+          </p>
+          <h2 className="section-title text-4xl sm:text-5xl font-black">
+            <span className="text-cyber-white">EXPERIENCIA</span>
+          </h2>
+          <div className="mt-4 w-24 h-px bg-gradient-to-r from-cyber-cyan to-transparent" />
+        </motion.div>
+
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyber-cyan/50 via-cyber-pink/30 to-transparent" />
+
+          <div className="space-y-12">
+            {experiences.map((exp, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.8, delay: i * 0.15 }}
+                className={`relative flex ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start gap-8`}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 flex flex-col items-center">
+                  <div
+                    className="w-3 h-3 rounded-full border-2 z-10"
+                    style={{ borderColor: exp.color, backgroundColor: '#04060f', boxShadow: `0 0 10px ${exp.color}` }}
+                  />
+                </div>
+
+                {/* Spacer for centering */}
+                <div className="hidden md:block w-1/2" />
+
+                {/* Card */}
+                <div className="ml-12 md:ml-0 md:w-1/2 neon-card p-6 space-y-3"
+                  style={{ borderColor: `${exp.color}30` }}
+                >
+                  {/* Type badge */}
+                  <div className="flex items-center justify-between">
+                    <span
+                      className="font-mono text-xs uppercase tracking-widest px-2 py-0.5 border"
+                      style={{ color: exp.color, borderColor: `${exp.color}40` }}
+                    >
+                      {exp.type === 'work' ? '⚡ Trabajo' : '🎓 Educación'}
+                    </span>
+                    <span className="font-mono text-xs text-cyber-white/40">{exp.period}</span>
+                  </div>
+
+                  <div>
+                    <h3 className="font-display text-base font-bold text-cyber-white">{exp.title}</h3>
+                    <p className="font-mono text-sm mt-0.5" style={{ color: exp.color }}>{exp.company}</p>
+                  </div>
+
+                  <p className="font-mono text-sm text-cyber-white/60 leading-relaxed">
+                    {exp.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {exp.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className="font-mono text-xs px-2 py-0.5 border text-cyber-white/40 border-cyber-white/10"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
