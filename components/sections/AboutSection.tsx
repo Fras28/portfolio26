@@ -124,7 +124,7 @@ export default function AboutSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               {[
-                { value: '3+',    label: 'Años exp.' },
+                { value: '4+',    label: 'Años exp.' },
                 { value: '30+',   label: 'Proyectos' },
                 { value: '100%',  label: 'Dedicación' },
               ].map(stat => (
