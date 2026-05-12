@@ -4,7 +4,8 @@ RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
-RUN npm ci
+# --ignore-scripts evita que postinstall corra prisma generate sin el schema
+RUN npm ci --ignore-scripts
 
 # ── Stage 2: build ─────────────────────────────────────────────────────────────
 FROM node:20-alpine AS builder
@@ -14,12 +15,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Prisma generate no necesita DATABASE_URL — solo genera el cliente
+# Ahora sí el schema está disponible — generamos el cliente de Prisma
 RUN npx prisma generate
 
-# Build de Next.js
+# Build de Next.js (sin prisma generate redundante — ya lo hicimos arriba)
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm run build -- --no-lint 2>/dev/null || npm run build
+RUN npx next build
 
 # ── Stage 3: runner ────────────────────────────────────────────────────────────
 FROM node:20-alpine AS runner
