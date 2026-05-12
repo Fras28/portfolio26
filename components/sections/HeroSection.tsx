@@ -284,7 +284,7 @@ export default function HeroSection() {
   );
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center bg-grid overflow-x-hidden overflow-y-hidden">
+    <section id="hero" className="relative flex items-start lg:items-center bg-grid overflow-x-hidden overflow-y-hidden" style={{ minHeight: '100svh' }}>
 
       {/* ── Mobile: canvas de fondo con tarjetas decorativas (z-index bajo) ── */}
       <div className="absolute inset-0 lg:hidden" style={{ touchAction: 'pan-y', overflow: 'hidden' }}>
@@ -313,7 +313,7 @@ export default function HeroSection() {
 
       {/* ── Content layout ── */}
       <div
-        className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 lg:pt-24 pb-6 sm:pb-10 pointer-events-none"
+        className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 lg:pt-32 pb-16 sm:pb-20 pointer-events-none"
         style={{ zIndex: 10 }}
       >
         <div className="w-full lg:w-1/2">
