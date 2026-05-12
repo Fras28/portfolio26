@@ -155,7 +155,7 @@ function HeroFloatingCard({ card, position, zRange = [10, 0] as [number, number]
               const dy = Math.abs(e.clientY - mouseDownPos.current.y);
               if (dx > 4 || dy > 4) return;
             }
-            scrollToProjects('Todos');
+            scrollToProjects();
           }}
           onMouseEnter={() => { setHovered(true); document.body.style.cursor = 'pointer'; }}
           onMouseLeave={() => { setHovered(false); document.body.style.cursor = 'auto'; }}
