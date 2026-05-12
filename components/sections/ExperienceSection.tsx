@@ -19,8 +19,8 @@ const experiences = [
     title: 'Especialista en Automatizaciones',
     company: 'Madison Marketing — Bahía Blanca',
     period: '2025 — Presente',
-    description: 'Diseño e implementación de flujos de automatización para campañas de marketing digital. Bots conversacionales con ManyChat, integraciones y workflows con n8n para clientes de la agencia.',
-    tags: ['ManyChat', 'n8n', 'WhatsApp API', 'Meta Ads', 'Zapier'],
+    description: 'Diseño e implementación de flujos de automatización para clientes de la agencia. Bots conversacionales con ManyChat, integraciones y workflows con n8n: atención automática, gestión de consultas y notificaciones internas.',
+    tags: ['ManyChat', 'n8n', 'WhatsApp API', 'Zapier'],
     color: '#ff0080',
   },
   {
@@ -43,12 +43,13 @@ const experiences = [
   },
   {
     type: 'education',
-    title: 'Desarrollo Web Full Stack',
-    company: 'Coderhouse',
+    title: 'Full Stack Web Developer',
+    company: 'Henry Bootcamp',
     period: '2022 — 2023',
-    description: 'Formación intensiva en desarrollo web moderno. React, Node.js, MongoDB, Express, Git y metodologías ágiles.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+    description: 'Bootcamp intensivo de más de 800 horas de programación. Formación en desarrollo web full stack con JavaScript, React, Redux, Node.js, Express, PostgreSQL y metodologías ágiles. Proyecto final grupal con deploy en producción.',
+    tags: ['JavaScript', 'React', 'Redux', 'Node.js', 'Express', 'PostgreSQL'],
     color: '#00ff88',
+    cert: 'https://certificates.soyhenry.com/cert?id=98a42830-8ee6-492d-9b6a-55d092249020',
   },
 ];
 
@@ -133,6 +134,21 @@ export default function ExperienceSection() {
                       </span>
                     ))}
                   </div>
+
+                  {'cert' in exp && exp.cert && (
+                    <a
+                      href={exp.cert as string}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs transition-colors pt-1"
+                      style={{ color: exp.color }}
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      Ver certificado
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}

@@ -125,7 +125,7 @@ export default function AboutSection() {
             <div className="grid grid-cols-3 gap-4">
               {[
                 { value: '3+',    label: 'Años exp.' },
-                { value: '20+',   label: 'Proyectos' },
+                { value: '30+',   label: 'Proyectos' },
                 { value: '100%',  label: 'Dedicación' },
               ].map(stat => (
                 <div key={stat.label} className="neon-card p-4 text-center">
