@@ -23,7 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="scanlines">{children}</body>
+      <body className="scanlines">
+        <div style={{ overflowX: 'hidden', maxWidth: '100vw', position: 'relative' }}>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

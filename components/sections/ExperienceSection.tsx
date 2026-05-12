@@ -124,11 +124,11 @@ export default function ExperienceSection() {
                     {exp.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 pt-1">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {exp.tags.map(tag => (
                       <span
                         key={tag}
-                        className="font-mono text-xs px-2 py-0.5 border text-cyber-white/40 border-cyber-white/10"
+                        className="font-mono text-xs px-2 py-0.5 bg-cyber-white/5 text-cyber-white/40 rounded-sm cursor-default select-none"
                       >
                         {tag}
                       </span>

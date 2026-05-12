@@ -162,7 +162,7 @@ export default function AboutSection() {
                   {group.items.map(item => (
                     <span
                       key={item}
-                      className="px-2 py-1 text-xs font-mono border border-cyber-cyan/20 text-cyber-white/60 hover:border-cyber-cyan/60 hover:text-cyber-cyan transition-all duration-200 cursor-default"
+                      className="px-2 py-1 text-xs font-mono bg-cyber-white/5 text-cyber-white/55 rounded-sm cursor-default select-none"
                     >
                       {item}
                     </span>
