@@ -222,9 +222,15 @@ function MobileGalaxy({ cards }: { cards: CardData[] }) {
   return (
     <Canvas
       camera={{ position: [0, 0, 18], fov: 60 }}
-      style={{ width: '100%', height: '100%', background: '#04060f' }}
+      style={{ width: '100%', height: '100%', background: '#04060f', touchAction: 'pan-y' }}
       onCreated={({ gl }) => {
+        // Pasar eventos wheel al scroll de la página
         gl.domElement.addEventListener('wheel', (e) => { window.scrollBy({ top: e.deltaY }); }, { passive: true });
+        // Pasar touch vertical al scroll nativo de la página
+        gl.domElement.style.touchAction = 'pan-y';
+        gl.domElement.addEventListener('touchmove', (e) => {
+          if (e.touches.length === 1) e.stopPropagation();
+        }, { passive: true });
       }}
     >
       <Suspense fallback={null}>
@@ -237,7 +243,8 @@ function MobileGalaxy({ cards }: { cards: CardData[] }) {
         <OrbitRing rx={Math.PI / 6} ry={Math.PI / 2} color="#7c00ff" r={6.2}  speed={0.0015} />
         {/* Cards decorativas — z bajo para quedar detrás del overlay */}
         <FloatingCards cards={cards} zRange={[2, 0]} interactive={false} />
-        <OrbitControls enablePan={false} enableZoom={false} enableRotate autoRotate autoRotateSpeed={0.4} rotateSpeed={0} />
+        {/* enableRotate={false}: el auto-rotate funciona igual, pero no captura touch del usuario */}
+        <OrbitControls enablePan={false} enableZoom={false} enableRotate={false} autoRotate autoRotateSpeed={0.4} />
       </Suspense>
     </Canvas>
   );
@@ -287,7 +294,7 @@ export default function HeroSection() {
     <section id="hero" className="relative flex items-start lg:items-center bg-grid overflow-x-hidden overflow-y-hidden" style={{ minHeight: '100svh' }}>
 
       {/* ── Mobile: canvas de fondo con tarjetas decorativas (z-index bajo) ── */}
-      <div className="absolute inset-0 lg:hidden" style={{ touchAction: 'pan-y', overflow: 'hidden' }}>
+      <div className="absolute inset-0 lg:hidden" style={{ touchAction: 'pan-y', overflow: 'hidden', pointerEvents: 'none' }}>
         <MobileGalaxy cards={visibleCards} />
       </div>
       {/* Overlay mobile z-5 — separa visualmente las tarjetas del texto */}
