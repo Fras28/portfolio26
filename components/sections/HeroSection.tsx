@@ -291,7 +291,7 @@ export default function HeroSection() {
   );
 
   return (
-    <section id="hero" className="relative flex items-start lg:items-center bg-grid overflow-x-hidden overflow-y-hidden" style={{ minHeight: '100svh' }}>
+    <section id="hero" className="relative flex items-start lg:items-center bg-grid" style={{ minHeight: '100svh' }}>
 
       {/* ── Mobile: canvas de fondo con tarjetas decorativas (z-index bajo) ── */}
       <div className="absolute inset-0 lg:hidden" style={{ touchAction: 'pan-y', overflow: 'hidden', pointerEvents: 'none' }}>
