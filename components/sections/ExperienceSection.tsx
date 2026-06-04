@@ -26,7 +26,7 @@ const experiences = [
   },
   {
     type: 'work',
-    title: 'Creador & Diseñador de Producto',
+    title: 'Creador, Diseñador de Producto & Desarrollador',
     company: 'Fielesa.com — Proyecto Propio',
     period: '2024 — Presente',
     description: 'Creación, diseño y desarrollo completo de Fielesa.com. Desde la concepción del producto hasta su implementación: arquitectura, UX/UI, desarrollo frontend y backend, y puesta en producción.',
