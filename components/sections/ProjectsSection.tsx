@@ -19,6 +19,16 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: 0,
+    title: 'Fielesa',
+    description: 'SaaS B2B de tarjetas de fidelización digital para pymes argentinas. El negocio configura su tarjeta de sellos, genera un QR y el cliente la usa desde el navegador sin instalar nada. Pagos con Stripe y MercadoPago, multisucursal, sistema de referidos y emails transaccionales.',
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'SaaS'],
+    color: '#00ff88',
+    status: 'Live',
+    demo: 'https://fielesa.com',
+    year: '2024',
+  },
+  {
     id: 1,
     title: 'Padel Pro Ranking',
     description: 'Plataforma de ranking y gestion del club Padel Pro Bahia. Ranking global, torneos, jugadores, categorias, partidos en curso y sistema de clubes. Frontend inmersivo con escena 3D interactiva.',
@@ -205,7 +215,7 @@ const projects: Project[] = [
   },
 ];
 
-const FILTERS = ['Todos', 'Automatizacion', 'React', 'Next.js', 'React Native', 'Firebase', 'TypeScript', 'Framer Motion'];
+const FILTERS = ['Todos', 'Automatizacion', 'React', 'Next.js', 'React Native', 'Firebase', 'TypeScript', 'Framer Motion', 'SaaS'];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);

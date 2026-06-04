@@ -109,10 +109,11 @@ export default function AboutSection() {
                 agropecuario, donde desarrollo el sitio web y los sistemas de captación digital
                 del equipo.
               </p>
+
               <p>
                 <span className="text-cyber-pink">&gt; </span>
-                También trabajo con <span className="text-cyber-pink">Madison Marketing Bahía Blanca</span>,
-                diseñando flujos de automatización con ManyChat y n8n para campañas de sus clientes.
+                También diseño e implemento <span className="text-cyber-pink">flujos de automatización</span> para agencias y clientes:
+                bots conversacionales con ManyChat, workflows con n8n y gestión automática de consultas y notificaciones.
               </p>
               <p>
                 <span className="text-cyber-purple">&gt; </span>

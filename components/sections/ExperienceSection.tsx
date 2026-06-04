@@ -14,15 +14,7 @@ const experiences = [
     tags: ['React', 'Three.js', 'Firebase', 'Framer Motion', 'n8n', 'ManyChat'],
     color: '#00f5ff',
   },
-  {
-    type: 'work',
-    title: 'Especialista en Automatizaciones',
-    company: 'Madison Marketing — Bahía Blanca',
-    period: '2025 — Presente',
-    description: 'Diseño e implementación de flujos de automatización para clientes de la agencia. Bots conversacionales con ManyChat, integraciones y workflows con n8n: atención automática, gestión de consultas y notificaciones internas.',
-    tags: ['ManyChat', 'n8n', 'WhatsApp API', 'Zapier'],
-    color: '#ff0080',
-  },
+
   {
     type: 'work',
     title: 'Full Stack Developer',
@@ -31,6 +23,15 @@ const experiences = [
     description: 'Desarrollo de aplicaciones web y móviles para clientes de distintas industrias. Proyectos propios y para terceros: e-commerce, dashboards, landings y apps React Native.',
     tags: ['Next.js', 'React Native', 'Node.js', 'Strapi', 'PostgreSQL'],
     color: '#7c00ff',
+  },
+  {
+    type: 'work',
+    title: 'Creador & Diseñador de Producto',
+    company: 'Fielesa.com — Proyecto Propio',
+    period: '2024 — Presente',
+    description: 'Creación, diseño y desarrollo completo de Fielesa.com. Desde la concepción del producto hasta su implementación: arquitectura, UX/UI, desarrollo frontend y backend, y puesta en producción.',
+    tags: ['Next.js', 'Node.js', 'UI/UX', 'Product Design', 'Full Stack'],
+    color: '#ff0080',
   },
   {
     type: 'work',
